@@ -354,6 +354,72 @@
         }
       }
     },
+    "/addresses/validate": {
+      "post": {
+        "tags": [
+          "misc"
+        ],
+        "summary": "Validate an address. If the address is valid, a 200 response code will be returned, else a 400 response code will be returned.",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "address": {
+                  "type": "string",
+                  "description": "The address to validate",
+                  "example": "TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4wW"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The operation completed successfully.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "isIntegrated": {
+                  "type": "boolean",
+                  "description": "Whether the address is an integrated address",
+                  "example": true
+                },
+                "paymentID": {
+                  "type": "string",
+                  "description": "If the address is integrated, this will hold the integrated payment ID",
+                  "example": ""
+                },
+                "actualAddress": {
+                  "type": "string",
+                  "description": "If the address is integrated, this will hold the extracted actual address. Otherwise, it will be the passed in address.",
+                  "example": "TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4w"
+                },
+                "publicSpendKey": {
+                  "type": "string",
+                  "description": "The public spend key of the passed in address",
+                  "example": "88032068e8209480bc634a48a00795c6a24c248a50f0937c168ac96ad0ba240d"
+                },
+                "publicViewKey": {
+                  "type": "string",
+                  "description": "The public view key of the passed in address",
+                  "example": "8d635efe0077ec70006732a847a36adbc5b108a3e7cebdbb93e0cfc35fcd8d45"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/responses/BadRequest"
+          },
+          "401": {
+            "$ref": "#/responses/UnauthorizedError"
+          }
+        }
+      }
+    },
     "/keys": {
       "get": {
         "tags": [
