@@ -212,6 +212,28 @@
         }
       }
     },
+    "/wallet": {
+      "delete": {
+        "tags": [
+          "wallet"
+        ],
+        "summary": "Closes and saves the opened wallet",
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Success"
+          },
+          "401": {
+            "$ref": "#/responses/UnauthorizedError"
+          },
+          "403": {
+            "$ref": "#/responses/NotOpen"
+          },
+          "500": {
+            "$ref": "#/responses/InternalError"
+          }
+        }
+      }
+    },
     "/save": {
       "put": {
         "tags": [
