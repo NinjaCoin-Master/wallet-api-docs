@@ -854,7 +854,7 @@
                   "default": 0,
                   "format": "uint64"
                 },
-                "privateSpendKey": {
+                "publicSpendKey": {
                   "description": "64 char hex public spend key",
                   "type": "string",
                   "example": "5c703d9bde0b7cd5ff3e19ea826a44066534661a7322c85e854e73f06e49cd06"
