@@ -1275,7 +1275,7 @@
         "summary": "Sends a transaction",
         "description": "This method will take funds from all subwallets as needed, and will use the primary address as the change address. It also uses a default fee, and default mixin. If this is not acceptable, please use the /advanced call instead.",
         "responses": {
-          "200": {
+          "201": {
             "description": "The operation completed successfully.",
             "schema": {
               "type": "object",
@@ -1341,7 +1341,7 @@
         "summary": "Sends a transaction",
         "description": "Note that every parameters sans destinations is optional.",
         "responses": {
-          "200": {
+          "201": {
             "description": "The operation completed successfully.",
             "schema": {
               "type": "object",
@@ -1448,7 +1448,7 @@
         "summary": "Sends a fusion transaction",
         "description": "Fusion transactions are zero fee, and seek to combine small inputs into larger ones, to allow for larger transactions. Many fusions may be required to fully optimize a wallet.",
         "responses": {
-          "200": {
+          "201": {
             "description": "The operation completed successfully.",
             "schema": {
               "type": "object",
@@ -1480,7 +1480,7 @@
         "summary": "Sends a fusion transaction",
         "description": "Fusion transactions are zero fee, and seek to combine small inputs into larger ones, to allow for larger transactions. Many fusions may be required to fully optimize a wallet.",
         "responses": {
-          "200": {
+          "201": {
             "description": "The operation completed successfully.",
             "schema": {
               "type": "object",
