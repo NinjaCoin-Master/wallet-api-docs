@@ -256,6 +256,45 @@
         }
       }
     },
+    "/export/json": {
+      "post": {
+        "tags": [
+          "misc"
+        ],
+        "summary": "Exports the wallet data to JSON into the filepath given",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "filename": {
+                  "description": "The filepath to save the wallet JSON to. Note that this is relative to where wallet-api was launched from - it is recommended you use an absolute path.",
+                  "type": "string",
+                  "example": "wallet-data.json"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/responses/Success"
+          },
+          "401": {
+            "$ref": "#/responses/UnauthorizedError"
+          },
+          "403": {
+            "$ref": "#/responses/NotOpen"
+          },
+          "500": {
+            "$ref": "#/responses/InternalError"
+          }
+        }
+      }
+    },
     "/reset": {
       "put": {
         "tags": [
@@ -1652,7 +1691,7 @@
           "transactions"
         ],
         "summary": "Sends a fusion transaction",
-        "description": "Fusion transactions are zero fee, and seek to combine small inputs into larger ones, to allow for larger transactions. Many fusions may be required to fully optimize a wallet.",
+        "description": "Fusion transactions are zero fee, and seek to combine small inputs into larger ones, to allow for larger transactions. Many fusions may be required to fully optimize a wallet. Every parameter is optional.",
         "responses": {
           "201": {
             "description": "The operation completed successfully.",
@@ -1704,6 +1743,11 @@
                 "type": "string",
                 "description": "The destination address to send funds to. Must exist in this wallet.",
                 "example": "TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4wW"
+              },
+              "optimizeTarget": {
+                "type": "number",
+                "description": "If given, we will not fuse inputs larger than this value. Value given must be a valid input amount, i.e. only a single significant leading digit. For example, 20000 is fine, 23456 is not.",
+                "example": 10000000
               }
             }
           }
