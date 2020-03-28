@@ -1953,7 +1953,7 @@
         "properties": {
           "errorCode": {
             "type": "integer",
-            "description": "A numeric code representing the error, for programmatic use. Error code mappings can be found here - https://github.com/turtlecoin/turtlecoin/blob/development/src/WalletBackend/WalletErrors.h We will endeavour to not change these mappings.",
+            "description": "A numeric code representing the error, for programmatic use. Error code mappings can be found here - https://github.com/turtlecoin/turtlecoin/blob/development/src/errors/Errors.h We will endeavour to not change these mappings.",
             "example": 5
           },
           "errorMessage": {
