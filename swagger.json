@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "<img src=\"logo.png\" style=\"display: block; margin-left: auto; margin-right: auto; width: 70%;\">\n\n# Intro\n\nThis website documents the API methods available for the `wallet-api` program.\n\nThe default API url is [127.0.0.1:8070](http://127.0.0.1:8070).\n\nNote that this program is distinct from `turtle-service`, which uses a different API.\nThe api docs for `turtle-service` can be found [here](https://api-docs.turtlecoin.lol/).\n\nWhen using the docs, be aware that you can click the 'Model' tab to get a description of all available parameters, their types, and an example value.\n\n# Initialization\n\n* Start by launching the `wallet-api` program.\n* From a terminal (or via a programming language):\n\n```\n./wallet-api --rpc-password somepassword\n```\n\n* Or if you're on windows:\n\n```\nwallet-api.exe --rpc-password somepassword\n```\n\n* An RPC password is always required, and you should then provide this password with every request to the API, in the `X-API-KEY` header.\n\n* If you want to see the available configuration options for the `wallet-api`, launch the program with:\n```\n./wallet-api --help\n```\n\n* Note that you cannot generate/open a wallet via the command line, only via the API.\n  This is by design to prevent application developers having to parse command line output.\n\n# Try it Out\n\nIf you want to test wallet-api out without doing any programming, you can use the 'Try it out' section in swagger.\n* Start by launching your wallet with CORS enabled:\n\n```\n./wallet-api --rpc-password \"mypassword\" --enable-cors \"*\"\n```\n\n* Click the 'Authorize' button in Swagger, and type in the RPC password you just chose - in this case, \"mypassword\", and click 'Authorize'.\n* Click a method to expand it, then click the 'Try it Out' button.\n* You can modify the parameters you want to send here, and then hit 'Execute' to send the request.\n* Note that this may not work in Firefox, I had to use Chrome to get it to work. F12 (developer console) may help diagnose CORS issues.\n\n# API Wrappers\n\nFinally, whilst you may send raw HTTP requests to the API url, you may be interested in an API/RPC wrapper.\n\nThese can be generated for many languages, by using the `Generate Client` option in the top menu.\nBe patient, this can take some time to complete.\n\n# Support\n\nIf you are having issues, please stop by our [discord](http://chat.turtlecoin.lol) and visit the `#dev_learning` channel for assistance.",
+    "description": "<img src=\"logo.png\" style=\"display: block; margin-left: auto; margin-right: auto; width: 70%;\">\n\n# Intro\n\nThis website documents the API methods available for the `wallet-api` program.\n\nThe default API url is [127.0.0.1:8070](http://127.0.0.1:8070).\n\nWhen using the docs, be aware that you can click the 'Model' tab to get a description of all available parameters, their types, and an example value.\n\n# Initialization\n\n* Start by launching the `wallet-api` program.\n* From a terminal (or via a programming language):\n\n```\n./wallet-api --rpc-password somepassword\n```\n\n* Or if you're on windows:\n\n```\nwallet-api.exe --rpc-password somepassword\n```\n\n* An RPC password is always required, and you should then provide this password with every request to the API, in the `X-API-KEY` header.\n\n* If you want to see the available configuration options for the `wallet-api`, launch the program with:\n```\n./wallet-api --help\n```\n\n* Note that you cannot generate/open a wallet via the command line, only via the API.\n  This is by design to prevent application developers having to parse command line output.\n\n# Try it Out\n\nIf you want to test wallet-api out without doing any programming, you can use the 'Try it out' section in swagger.\n* Start by launching your wallet with CORS enabled:\n\n```\n./wallet-api --rpc-password \"mypassword\" --enable-cors \"*\"\n```\n\n* Click the 'Authorize' button in Swagger, and type in the RPC password you just chose - in this case, \"mypassword\", and click 'Authorize'.\n* Click a method to expand it, then click the 'Try it Out' button.\n* You can modify the parameters you want to send here, and then hit 'Execute' to send the request.\n* Note that this may not work in Firefox, I had to use Chrome to get it to work. F12 (developer console) may help diagnose CORS issues.\n\n# API Wrappers\n\nFinally, whilst you may send raw HTTP requests to the API url, you may be interested in an API/RPC wrapper.\n\nThese can be generated for many languages, by using the `Generate Client` option in the top menu.\nBe patient, this can take some time to complete.\n\n# Support\n\nIf you are having issues, please stop by our [discord](http://discord.ninjacoin.org) and visit the `#dev_learning` channel for assistance.",
     "version": "1.0.0",
     "title": "wallet-api"
   },
@@ -363,7 +363,7 @@
                     "nodeAddress": {
                       "type": "string",
                       "description": "The address the node fee gets sent to, if non zero",
-                      "example": "TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4wW"
+                      "example": "Ninja12tVtuieDj7g5eqyHf95FEnu7QP3jSKLDLrYzWWfQ2A8ejUFEV87kYuCriUFvEyshSHLJ7V69X2jsSYNUvtLjJat5iPbWw2E"
                     }
                   }
                 }
@@ -432,7 +432,7 @@
                 "address": {
                   "type": "string",
                   "description": "The address to validate",
-                  "example": "TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4wW"
+                  "example": "Ninja12tVtuieDj7g5eqyHf95FEnu7QP3jSKLDLrYzWWfQ2A8ejUFEV87kYuCriUFvEyshSHLJ7V69X2jsSYNUvtLjJat5iPbWw2E"
                 }
               }
             }
@@ -457,17 +457,17 @@
                 "actualAddress": {
                   "type": "string",
                   "description": "If the address is integrated, this will hold the extracted actual address. Otherwise, it will be the passed in address.",
-                  "example": "TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4w"
+                  "example": "Ninja12tVtuieDj7g5eqyHf95FEnu7QP3jSKLDLrYzWWfQ2A8ejUFEV87kYuCriUFvEyshSHLJ7V69X2jsSYNUvtLjJat5iPbWw2E"
                 },
                 "publicSpendKey": {
                   "type": "string",
                   "description": "The public spend key of the passed in address",
-                  "example": "88032068e8209480bc634a48a00795c6a24c248a50f0937c168ac96ad0ba240d"
+                  "example": "5a039a67c2a955d18d35e9ef4f0b072f5f2bbcae1795f0d013c1a16b047e3b70"
                 },
                 "publicViewKey": {
                   "type": "string",
                   "description": "The public view key of the passed in address",
-                  "example": "8d635efe0077ec70006732a847a36adbc5b108a3e7cebdbb93e0cfc35fcd8d45"
+                  "example": "2e3182e434132abd180f2de0d4ac84bdf36bf05f7285b976d7fd03d2765a6a31"
                 }
               }
             }
@@ -685,7 +685,7 @@
                     "type": "string"
                   },
                   "example": [
-                    "TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq"
+                    "Ninja12tVtuieDj7g5eqyHf95FEnu7QP3jSKLDLrYzWWfQ2A8ejUFEV87kYuCriUFvEyshSHLJ7V69X2jsSYNUvtLjJat5iPbWw2E"
                   ]
                 }
               }
@@ -750,7 +750,7 @@
                 "address": {
                   "type": "string",
                   "description": "The primary address",
-                  "example": "TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq"
+                  "example": "Ninja12tVtuieDj7g5eqyHf95FEnu7QP3jSKLDLrYzWWfQ2A8ejUFEV87kYuCriUFvEyshSHLJ7V69X2jsSYNUvtLjJat5iPbWw2E"
                 }
               }
             }
@@ -782,17 +782,17 @@
                 "address": {
                   "type": "string",
                   "description": "The created address",
-                  "example": "TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq"
+                  "example": "Ninja12tVtuieDj7g5eqyHf95FEnu7QP3jSKLDLrYzWWfQ2A8ejUFEV87kYuCriUFvEyshSHLJ7V69X2jsSYNUvtLjJat5iPbWw2E"
                 },
                 "privateSpendKey": {
                   "type": "string",
                   "description": "The corresponding private spend key for this address, can be used to restore along with the shared private view key",
-                  "example": "6d4a7c160cbd4c9de33eeb161ff30539d2e28b447eb5af73523cc3379c591c83"
+                  "example": "bd2c49efdf8493b68c8b9664864a252f287b350600c7da50d0357242a74bd109"
                 },
                 "publicSpendKey": {
                   "type": "string",
                   "description": "The corresponding public spend key for this address, can be used to restore a view wallet along with the shared private view key",
-                  "example": "6d4a7c160cbd4c9de33eeb161ff30539d2e28b447eb5af73523cc3379c591c83"
+                  "example": "7b30faf8f5a489d6c3db68e404f345b1f894cafdb60e882723effbe58f5ed848"
                 }
               }
             }
@@ -839,7 +839,7 @@
                 "privateSpendKey": {
                   "description": "64 char hex private spend key",
                   "type": "string",
-                  "example": "5c703d9bde0b7cd5ff3e19ea826a44066534661a7322c85e854e73f06e49cd06"
+                  "example": "76d002dc54f2f9abee55ac56e3c68e575d4cca2d8b951b2f14e9e32d7fd9c507"
                 }
               }
             }
@@ -854,7 +854,7 @@
                 "address": {
                   "type": "string",
                   "description": "The created address",
-                  "example": "TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq"
+                  "example": "Ninja12tVtuieDj7g5eqyHf95FEnu7QP3jSKLDLrYzWWfQ2A8ejUFEV87kYuCriUFvEyshSHLJ7V69X2jsSYNUvtLjJat5iPbWw2E"
                 }
               }
             }
@@ -901,7 +901,7 @@
                 "publicSpendKey": {
                   "description": "64 char hex public spend key",
                   "type": "string",
-                  "example": "5c703d9bde0b7cd5ff3e19ea826a44066534661a7322c85e854e73f06e49cd06"
+                  "example": "76d002dc54f2f9abee55ac56e3c68e575d4cca2d8b951b2f14e9e32d7fd9c507"
                 }
               }
             }
@@ -916,7 +916,7 @@
                 "address": {
                   "type": "string",
                   "description": "The created address",
-                  "example": "TRTLv2cT32cZbF6KvnU69LNxptYFBMCKs3yqLmCAVjPW4rNTExpB7RpGKGJEkD1E9MVmM8SUUJfUh42Ajo1Hgz5wUN6budvzaq"
+                  "example": "Ninja12tVtuieDj7g5eqyHf95FEnu7QP3jSKLDLrYzWWfQ2A8ejUFEV87kYuCriUFvEyshSHLJ7V69X2jsSYNUvtLjJat5iPbWw2E"
                 }
               }
             }
@@ -959,7 +959,7 @@
                 "integratedAddress": {
                   "type": "string",
                   "description": "The integrated address",
-                  "example": "TRTLuxiNXhy96RNDkv2jx29jL7GdTWYBmA4r7K8KRpDWA4hJJnTZEgFHFzxqvmBLtz94oF4uPokQdHbV9j2g7S6LA4hKPvjZEFS2CiAj6DL8isYELmTec8Z9BK56oL1KMhjMRSMyfwYaogKg17hQKC23CHPBcHqrHHGzdRYUk3HGqkMwXbHg3BoCpXD"
+                  "example": "Ninja12VfKMHvp6tTCAEm3AEauqHgs2zNHvxsiBvP9Xw9jZL9qFpYhFAEhWGZhdD6pHbSvFmDSxwR9mA1kLve2aEAQ6cLXq1V1BieDj7g5eqyHf95FEnu7QP3jSKLDLrYzWWfQ2A8ejUFEV87kYuCriUFvEyshSHLJ7V69X2jsSYNUvtLjJat5hPUJK4o"
                 }
               }
             }
@@ -1362,12 +1362,12 @@
                 "destination": {
                   "type": "string",
                   "description": "The address to send funds to",
-                  "example": "TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4wW"
+                  "example": "Ninja12tVtuieDj7g5eqyHf95FEnu7QP3jSKLDLrYzWWfQ2A8ejUFEV87kYuCriUFvEyshSHLJ7V69X2jsSYNUvtLjJat5iPbWw2E"
                 },
                 "amount": {
                   "type": "number",
                   "format": "uint64",
-                  "description": "The amount of TRTL to send (in atomic units)",
+                  "description": "The amount of NINJA to send (in atomic units)",
                   "example": 1234
                 },
                 "paymentID": {
@@ -1437,12 +1437,12 @@
                 "destination": {
                   "type": "string",
                   "description": "The address to send funds to",
-                  "example": "TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4wW"
+                  "example": "Ninja12tVtuieDj7g5eqyHf95FEnu7QP3jSKLDLrYzWWfQ2A8ejUFEV87kYuCriUFvEyshSHLJ7V69X2jsSYNUvtLjJat5iPbWw2E"
                 },
                 "amount": {
                   "type": "number",
                   "format": "uint64",
-                  "description": "The amount of TRTL to send (in atomic units)",
+                  "description": "The amount of NINJA to send (in atomic units)",
                   "example": 1234
                 },
                 "paymentID": {
@@ -1735,14 +1735,14 @@
                 "type": "array",
                 "items": {
                   "type": "string",
-                  "example": "TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4wW"
+                  "example": "Ninja12tVtuieDj7g5eqyHf95FEnu7QP3jSKLDLrYzWWfQ2A8ejUFEV87kYuCriUFvEyshSHLJ7V69X2jsSYNUvtLjJat5iPbWw2E"
                 },
                 "description": "The addresses to draw funds for the transaction from (must be an address in this container)"
               },
               "destination": {
                 "type": "string",
                 "description": "The destination address to send funds to. Must exist in this wallet.",
-                "example": "TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4wW"
+                "example": "Ninja12tVtuieDj7g5eqyHf95FEnu7QP3jSKLDLrYzWWfQ2A8ejUFEV87kYuCriUFvEyshSHLJ7V69X2jsSYNUvtLjJat5iPbWw2E"
               },
               "optimizeTarget": {
                 "type": "number",
@@ -1906,7 +1906,7 @@
                   "address": {
                     "type": "string",
                     "description": "The address this balance belongs to",
-                    "example": "TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4wW"
+                    "example": "Ninja12tVtuieDj7g5eqyHf95FEnu7QP3jSKLDLrYzWWfQ2A8ejUFEV87kYuCriUFvEyshSHLJ7V69X2jsSYNUvtLjJat5iPbWw2E"
                   }
                 }
               }
@@ -1989,7 +1989,7 @@
         {
           "properties": {
             "filename": {
-              "description": "The filename to store/load the wallet from. Note that this is relative to where turtle-wallet-api was launched from - it is recommended you use an absolute path.",
+              "description": "The filename to store/load the wallet from. Note that this is relative to where ninja-wallet-api was launched from - it is recommended you use an absolute path.",
               "type": "string",
               "example": "mywallet.wallet"
             },
@@ -2039,7 +2039,7 @@
             "privateSpendKey": {
               "description": "64 char hex private spend key",
               "type": "string",
-              "example": "5c703d9bde0b7cd5ff3e19ea826a44066534661a7322c85e854e73f06e49cd06"
+              "example": "76d002dc54f2f9abee55ac56e3c68e575d4cca2d8b951b2f14e9e32d7fd9c507"
             }
           }
         }
@@ -2081,9 +2081,9 @@
               "example": "493f522e1f46b5c07f753ed28dc2db9da5f571f28c2fa54f4c9a0a7941b09d0b"
             },
             "address": {
-              "description": "99 char public TRTL address",
+              "description": "99 char public NINJA address",
               "type": "string",
-              "example": "TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4wW"
+              "example": "Ninja12tVtuieDj7g5eqyHf95FEnu7QP3jSKLDLrYzWWfQ2A8ejUFEV87kYuCriUFvEyshSHLJ7V69X2jsSYNUvtLjJat5iPbWw2E"
             }
           }
         }
@@ -2102,8 +2102,8 @@
           "description": "The daemon port to sync the wallet with",
           "type": "integer",
           "format": "uint16",
-          "default": 11898,
-          "example": 11898
+          "default": 11801,
+          "example": 11801
         }
       }
     },
@@ -2115,11 +2115,11 @@
       "example": {
         "destinations": [
           {
-            "address": "TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4wW",
+            "address": "Ninja12tVtuieDj7g5eqyHf95FEnu7QP3jSKLDLrYzWWfQ2A8ejUFEV87kYuCriUFvEyshSHLJ7V69X2jsSYNUvtLjJat5iPbWw2E",
             "amount": 1234
           },
           {
-            "address": "TRTLv3r4N3Jbk7FApJXN3M66xWWr8FhbAiwGdEJC2wF1hTKGxnwUzhH8pFydrruvdtPSVTCMUKWGdSrAitgnEVFp8356HCkKHZG",
+            "address": "Ninja12sgvjDnxCUFzB1Hb5GCpYSkou7eWdhQURFDwYhSks55aXwoQ683FNhsZAnAR8r1CZQ3L2G2QFXVFiVj1GKb8XdV5suYMU1t",
             "amount": 5000
           }
         ],
@@ -2135,12 +2135,12 @@
               "address": {
                 "type": "string",
                 "description": "The address to send to",
-                "example": "TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4wW"
+                "example": "Ninja12tVtuieDj7g5eqyHf95FEnu7QP3jSKLDLrYzWWfQ2A8ejUFEV87kYuCriUFvEyshSHLJ7V69X2jsSYNUvtLjJat5iPbWw2E"
               },
               "amount": {
                 "type": "number",
                 "format": "uint64",
-                "description": "The amount of TRTL to send (in atomic units)",
+                "description": "The amount of NINJA to send (in atomic units)",
                 "example": 1234
               }
             }
@@ -2169,7 +2169,7 @@
           "type": "array",
           "items": {
             "type": "string",
-            "example": "TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4wW",
+            "example": "Ninja12tVtuieDj7g5eqyHf95FEnu7QP3jSKLDLrYzWWfQ2A8ejUFEV87kYuCriUFvEyshSHLJ7V69X2jsSYNUvtLjJat5iPbWw2E",
             "description": "The addresses to draw funds for the transaction from (must be an address in this container). Defaults to every address.",
             "default": "Every address in the container."
           }
@@ -2183,7 +2183,7 @@
         "changeAddress": {
           "type": "string",
           "description": "The address in this wallet to return any 'change' to if we have to spend more than the requested amount. Defaults to primary address.",
-          "example": "TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4wW",
+          "example": "Ninja12tVtuieDj7g5eqyHf95FEnu7QP3jSKLDLrYzWWfQ2A8ejUFEV87kYuCriUFvEyshSHLJ7V69X2jsSYNUvtLjJat5iPbWw2E",
           "default": "Wallet container primary address"
         },
         "unlockTime": {
@@ -2248,7 +2248,7 @@
           "properties": {
             "address": {
               "type": "string",
-              "example": "TRTLv3ErzkY2CiAj6DL8isYELmTec8Z9BK56oL1KMhjMRSMyfwYaogKg17hQKC23CHPBcHqrHHGzdRYUk3HGqkMwXbHg3Dy2rH",
+              "example": "Ninja12tVtuieDj7g5eqyHf95FEnu7QP3jSKLDLrYzWWfQ2A8ejUFEV87kYuCriUFvEyshSHLJ7V69X2jsSYNUvtLjJat5iPbWw2E",
               "description": "The receiving address of this transfer, or the sending address if the amount is negative"
             },
             "amount": {
@@ -2272,7 +2272,7 @@
       "name": "address",
       "required": true,
       "type": "string",
-      "description": "The address to use for this operation. Should be a valid, 99 character TRTL address."
+      "description": "The address to use for this operation. Should be a valid, 101 character NINJA address."
     },
     "paymentID": {
       "in": "path",
